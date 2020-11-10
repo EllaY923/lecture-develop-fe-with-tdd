@@ -1,9 +1,13 @@
-const ClickCounter = () => {
-  let counter = 0
+var App = App || {}
 
-  return {
-    getCounter() {
-      return counter
+App.ClickCounter = () => {
+    let value = 0;
+    return {
+        getValue(){
+            return value
+        },
+        increase(){
+            value++
+        }
     }
-  }
 }
