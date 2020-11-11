@@ -1,13 +1,15 @@
-var ClickCounter = function() {
-  var counter = 0
+var App = App || {}
+
+App.ClickCounter = function() {
+  var value = 0
 
   return {
-    getCounter() {
-      return counter
+    getValue() {
+      return value
     },
 
     increase() {
-      counter++
+      value++
     }
   }
 }
