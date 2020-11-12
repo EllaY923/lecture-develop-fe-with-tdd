@@ -6,6 +6,10 @@ var ClickCountView = function(clickCounter, updateEl) {
     updateView() {
       updateEl.text(clickCounter.getCounter())
     },
+    increaseAndUpdateView(){
+        clickCounter.increase()
+        this.updateView()
+    }
   }
 }
 
