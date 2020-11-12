@@ -1,5 +1,5 @@
 describe('App.ClickCountView 모듈', () => {
-  let udpateEl, clickCounter, view
+  let updateEl, clickCounter, view
 
   beforeEach(()=> {
     const data = { value: 0 }
