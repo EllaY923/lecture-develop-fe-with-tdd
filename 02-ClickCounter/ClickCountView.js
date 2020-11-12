@@ -1,17 +1,22 @@
-var ClickCountView = function(clickCounter, updateEl) {
+var ClickCountView = function(clickCounter, options) {
   if (!clickCounter) throw new Error(ClickCountView.messages.noClickCounter)
-  if (!updateEl) throw new Error(ClickCountView.messages.noUpdateEl)
+  if (!options.updateEl) throw new Error(ClickCountView.messages.noUpdateEl)
   
-  return {
+  const view = {
     updateView() {
-      updateEl.text(clickCounter.getCounter())
-    },
-
-    increaseAndUpdateView() {
-      clickCounter.increase()
-      this.updateView()
-    }
+        options.updateEl.text(clickCounter.getCounter())
+      },
+      increaseAndUpdateView() {
+        clickCounter.increase()
+        this.updateView()
+      }
   }
+
+  options.triggerEl.addEventListener('click', ()=>{
+    view.increaseAndUpdateView()
+  })
+
+  return view
 }
 
 ClickCountView.messages = {
